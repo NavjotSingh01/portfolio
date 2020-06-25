@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- <link rel="stylesheet" href="../css/stylee.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="http://github.com/michalsnik/aos">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css"
+        integrity="sha256-FAIOZJGGkyuIp/gVrVL/k52z4rpCKMrRlYMdGCWstUo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css"
+        integrity="sha256-JPv5igMSqm2ztJxtjiup0q6NMWu7L3MbMn9FqyPgfdo=" crossorigin="anonymous" />
+
+
+        <link rel="shortcut icon" href="../media/n.jpeg" />
+    <title>NAVJOT SINGH</title>
+</head>
+
+<body>
+
+
+    <!-- javascript animating the text -->
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+    </script>
+    <script>
+        // this one is for typewrite animation 
+        // hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function (e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 1200);
+        });
+    </script>
+    <!-- animating the text ends -->
+    <script>
+        var TxtType = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+        // Executing the script 
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+
+        };
+    </script>
+
+
+
+    <header class="templateux-navbar" data-aos="fade-down">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-3 col-12">
+                    <div class="site-logo"><a href="" class="animsition-link">NAVJOT SINGH</a></div>
+                </div>
+                <div class="col-sm-9 col-9 text-right">
+                    <button class="hamburger hamburger--spin toggle-menu ml-auto js-toggle-menu" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <nav class="templateux-menu js-templateux-menu">
+                        <ul class="list-unstyled">
+
+                            <li><a href="" class="animsition-link active">Home</a></li>
+                            <li><a href="#pujna" class="animsition-link">About</a></li>
+                            <li><a href="#services-section" class="animsition-link">Projects</a></li>
+                            <li><a href="#what-we-do-section" class="animsition-link">Services</a></li>
+                            <li><a href="#contact-section" class="animsition-link">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section class="home_banner_area">
+        <div class="banner_inner stratend">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-7">
+                        <div class="firsthead" id="text">
+                            <span class="pgsubtitle">WELCOME!</span>
+                            <h2>
+                                <a class="typewrite" data-period="2000" data-type='[ "HELLO, i AM NAVJOT SINGH" ]'>
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="home_right_img">
+                            <img class="" src="../media/undraw_mobile_encryption_cl5q.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- 
+    <section class="mainheadonit" style="width: 100%;">
+
+        <div class="firsthead" id="text">
+            <span class="pgsubtitle">WELCOME</span>
+            <h2>
+                <a class="typewrite" data-period="2000" data-type='[ "HELLO, i AM NAVJOT SINGH" ]'>
+                </a>
+            </h2>
+        </div>
+    </section> -->
+
+
+
+    <section class="firstlast" style="margin-bottom:0px; width: 100%; margin-top: 40px;">
+        <div class="container" style="width: 100%;">
+            <div class="row pt-0 site-section">
+                <div class="col-md-6 align-self-center firstyoyo">
+                    <h3 class="section-title-sub text-primary">Writing code since 2016</h3>
+                    <h2 class="section-title mb-4">me is a full stack developer and freelancer</h2>
+                    <p>I like to build amazing applications. I developed websites, plugins for browsers,website
+                        applications and even games! If you're interested you can see some of my favourite projects
+                        below in my portfolio.</p>
+                    <p> when me is not coding, I enjoy reading books. "Think and grow rich" is one of my favourite. I do
+                        paint and I'm very good in it !!
+                    </p>
+
+                </div>
+                <div class="col-md-5 ml-auto img-overlap">
+                    <div class="img-1"><img src="../media/1.JPG" alt="Image" class="img-fluid img-shadow"></div>
+                    <div class="img-2"><img src="../media/1.JPG" alt="Image" class="img-fluid img-shadow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- rgb(245, 229, 229); -->
+    <section class="fashionlastrite" style="width: 100%;" id="pujna">
+        <div class="fashion-shop">
+            <div class="row" style="width: 100%;">
+                <div class="col" style="background-color: white;" id="shop-fashion">
+                    <span class="tellme"><i class="" id="user" style="margin: 0 20px 0 0;" data-aos="fade-right"> <img
+                                src="../media/undraw_coding_6mjf.svg" class="whomeis" alt="" style="width:auto; height: 110px;"></i><span id="whomeis">who me is</span></span><br><br><br><br><br>
+                    <h1 style="font-size: 40px" data-aos="fade-up">ABOUT ME
+                    </h1>
+                    <div class="quality" data-aos="fade-up">
+                        <p>When I first got my hands dirty with coding it was back in 2016. My passion was defined ever
+                            since. I am going to graduate soon in computer science and till date I mastered full-stack
+                            creation of web
+                            applications, digital drawing and algorithm courses during my studies. Nevertheless I fell
+                            in love with
+                            the tech's beauty.
+                        </p>
+                        <p>Why?<br> Just love it. dat’s what me’m passionate for.</p>
+                        <p>me really enjoy doing:<br> 1. Object-oriented programming and GUI with Java.<br> 2. Creating
+                            responsive, user-friendly and visually enjoyable UIs (HTML,
+                            SCSS).<br> 3. Building frontend apps by using Angular or React.<br> 4. Using algorithms to
+                            learn machine learning fundamentals.<br> 5. Implementing backend APIs, written
+                            with NODEjS or preferably with DJANGO.<br> 6. Building websites with Squarespace and
+                            optimising them to provide <br> best and Enriched User Experience </p>
+                        <p>My Skill Set:</p>
+                        <ul>
+                            <li>React/Angular/Javascript</li>
+                            <li>Java</li>
+                            <li>Django</li>
+                            <li>Python</li>
+                            <li>HTML5</li>
+                            <li>CSS3/SCSS</li>
+                            <li>SquareSpace</li>
+                        </ul>
+                        <div class="">
+                            <p id="gobtn"><a href="../media/CV NAV.pdf" class="button">Download CV</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col colfashionimgcontent" data-aos="zoom-in-right">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="prodone">
+        <div class="row pb-0  block__19738 section-counter">
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0  yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-mobile mr-3"></span>
+                    <strong class="number" data-number="4">0</strong>
+                </div><br>
+                <span class="caption "><i class="fas fa-medal fa-2x baro"></i>YEARS OF EXPERIENCE </span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0  yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-lightbulb mr-3"></span>
+                    <strong class="number" data-number="15">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-tasks fa-2x baro"></i>FINISHED PROJECTS</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-trophy mr-3"></span>
+                    <strong class="number" data-number="3">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-spinner fa-2x baro"></i>ONGOING PROJECTS</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-puzzle mr-3"></span>
+                    <strong class="number" data-number="62500">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-code fa-2x baro"></i>LINES OF CODE</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-puzzle mr-3"></span>
+                    <strong class="number" data-number="120">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-coffee fa-2x baro"></i>CUPS OF TEA</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-puzzle mr-3"></span>
+                    <strong class="number" data-number="120">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-keyboard fa-2x baro"></i>WPM TYPING SPEED</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-puzzle mr-3"></span>
+                    <strong class="number" data-number="15">0</strong>
+                </div><br>
+                <span class="caption"><i class="fas fa-gamepad fa-2x baro"></i></i>E-SPORTS EVENT</span>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3  mb-lg-0 yostar">
+                <div class="d-flex align-items-center justify-content-center mb-2">
+                    <span class="icon-line-puzzle mr-3"></span>
+                    <strong class="number" data-number="8">0</strong>
+                </div><br>
+                <span class="caption"><i class="fab fa-github fa-2x baro"></i>GIT HUB REPOS</span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- <section class="gettoknow">
+        <div class="getrow">
+            <div class="servcontainer2">
+                <div class="srow ">
+
+                    <h2 class="sup">want to know more about me </h2>
+                    <h2 class="sbig">My Space</h2>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="experiencee" style="margin-top: 50px;">
+
+        <div class="container">
+
+            <!-- section title -->
+            <div class="row" style="overflow: hidden;">
+                <img class="colorsign" src="../media/graduation.svg" alt=""
+                    style="width: 100px; position: relative; top: -0px; height: 80px; color: #2C98F0; ">
+                <div class="col-md-6 col-md-offset-3 col-md-pull-3" data-aos="fade-right">
+                    <span class="heading-meta">Where I Learnt</span>
+                    <h2 class="color-heado">EDUCATION</h2>
+                </div>
+            </div>
+            <!-- <div class="col-lg-6 section-title">
+                <span class="sub-title totli mb-2 d-block">Where I learnt</span>
+                <h2 class="title text-primary">Education</h2>
+            </div> -->
+            <!-- <h2 class="section-titlee wow fadeInUp">Education and Experience</h2> -->
+            <div class="spacer" data-height="60"></div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <!-- timeline wrapper -->
+                    <div class="timeline edu bg-whitee grounded shadow-dark padding-30 overflow-hidden">
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">May 2019 - May 2021</span>
+                                <h3 class="title">Lambton College Sarnia</h3>
+                                <p class="myRole">Diploma in Computer Programming</p>
+                                <ul class="myDesc">
+                                    <li>Location: Mississauga, ON</li>
+                                    <li>Relevant Coursework: Web Technologies, Database Systems, Analysis of Algorithms,
+                                        Mobile Development, Enterprise Technology</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- timeline item -->
+                        <div class="timeline-container wow" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">January 2017 - January 2019</span>
+                                <h3 class="title">Army Public School</h3>
+                                <p class="myRole">High School Graduate in Information Technology</p>
+                                <ul class="myDesc">
+                                    <li>Location: Ambala, India</li>
+                                    <li>Relevant Coursework: Computer Graphics,Physics, Chemistry
+                                        Data Structure and Algorithm Analysis.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- main line -->
+                        <span class="line"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <!-- responsive spacer -->
+                    <div class="spacer d-md-none d-lg-none" data-height="30"></div>
+
+                    <!-- timeline wrapper -->
+                    <div class="timeline exp bg-white grounded shadow-dark padding-30 overflow-hidden ">
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <p style="font-size: 20px; font-weight: 600; letter-spacing: 3px;">CERTIFICATIONS</p> 
+                            <div class="content">
+                                <span class="time">February 2020 - March 2020</span>
+                                <h3 class="title">Udemy</h3>
+                                <p class="myRole">Python Programming Master Class</p>
+                                <ul class="myDesc">
+                                    <li>learned the most advance python programming skills</li>
+                                    <li>Build various projects related to GUI`s using Tkinter and PYPI</li>
+                                    <li>Solved technical Interview Problems</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">March 2020 - May 2020</span>
+                                <h3 class="title">Linkedin Learning</h3>
+                                <p class="myRole">Functional Programming with Javascript</p>
+                                <ul class="myDesc">
+                                    <li>Build software`s by composing functions</li>
+                                    <li>leanred different functions and uses like asynchronus fucntion </li>
+                                    <li>Major Skills Learned: Imperative Programming, Mapping, Filtering, Slicing, Sorting, Reducing, Recursion</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">March 2020 - April 2020</span>
+                                <h3 class="title">Udemy</h3>
+                                <p class="myRole">Data Structures and Algorithms Bootcamp</p>
+                                <ul class="myDesc">
+                                    <li>Advanced Algorithms for Big Tech Interviews</li>
+                                    <li>Data-Structure functioning </li>
+                                    <li>Communicated, co-ordinated and contacted large companies such as Cooler Master,
+                                        Zowie by BenQ, Circle Gaming, USports and Entity Gaming.</li>
+                                    <li>Supervised technical operations of video games in “U CYPHER SEASON 1” TV show
+                                        telecasted on MTV India.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- main line -->
+                        <span class="line"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="experience" style="margin-top: 50px;">
+
+        <div class="container">
+
+            <!-- section title -->
+            <div class="row" style="overflow: hidden;">
+                <img class="colorsign" src="../media/megahand.svg" alt=""
+                    style="width: 100px; position: relative; top: -0px; height: 80px; color: #2C98F0; ">
+                <div class="col-md-6 col-md-offset-3 col-md-pull-3" data-aos="fade-right">
+                    <span class="heading-meta">Experience</span>
+                    <h2 class="color-heado">Work Experience</h2>
+                </div>
+            </div>
+            <!-- <h2 class="section-titlee wow fadeInUp">Education and Experience</h2> -->
+            <div class="spacer" data-height="60"></div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <!-- timeline wrapper -->
+                    <div class="timeline edu bg-whitee grounded shadow-dark padding-30 overflow-hidden">
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">August 2017 - May 2018</span>
+                                <h3 class="title">Kentucky Fried Chicken</h3>
+                                <p class="myRole">Team Leader</p>
+                                <ul class="myDesc">
+                                    <li>Taking Orders and Processing it</li>
+                                    <li>Maintaining a clean environment</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">June 2017 - May 2019</span>
+                                <h3 class="title">Vector Marketing</h3>
+                                <p class="myRole">Sales Representative</p>
+                                <ul class="myDesc">
+                                    <li>Good Knowledge of Computer Software and Hardware’s, Electronics, video games,
+                                        cell phones (specifications), stereos <br> and other basic home tools and
+                                        accessories</li>
+                                    <li>handled customers and their interest in products </li>
+                                    <li>Good skills in selling and buying products, efficienty completed targets set
+                                        by company </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">June 2017 - May 2019</span>
+                                <h3 class="title">Mechanic</h3>
+                                <p class="myRole">Service Technician</p>
+                                <ul class="myDesc">
+                                    <li>responsible for inspecting and repairing vehicles, machinery, and cars</li>
+                                    <li>Maintaining inspections, monitor inventory, assembling mechanical components,
+                                        and perform repairs under supervison </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- main line -->
+                        <span class="line"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <!-- responsive spacer -->
+                    <div class="spacer d-md-none d-lg-none" data-height="30"></div>
+
+                    <!-- timeline wrapper -->
+                    <div class="timeline exp bg-white grounded shadow-dark padding-30 overflow-hidden ">
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">May 2020 - August 2020</span>
+                                <h3 class="title">Shawrama Corner</h3>
+                                <p class="myRole">Manager</p>
+                                <ul class="myDesc">
+                                    <li>accountable for ensuring the successful operation</li>
+                                    <li>strong service skills and handling cash</li>
+                                    <li>weekly sales reporting, invoicing and reducing associate theft and ensurign
+                                        guest safety</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- timeline item -->
+                        <div class="timeline-container" data-aos="fade-up">
+                            <div class="content">
+                                <span class="time">July 2017 - February 2019</span>
+                                <h3 class="title">Freelancer</h3>
+                                <p class="myRole">Full Stack Developer</p>
+                                <ul class="myDesc">
+                                    <li>Implementing core java concepts in OOP</li>
+                                    <li>Building ALGO GUI's with Python libraries like PYPI, TKINTER</li>
+                                    <li>Dynamic Websites using DJANGO REST API & React</li>
+                                    <li>Creating Management Database System with MYSQL</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- main line -->
+                        <span class="line"></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- <section class="color-expo" data-section="experience">
+        <div class="color-narrow-cont">
+            <div class="row" style="overflow: hidden;">
+                <img class="colorsign" src="../media/megahand.svg" alt="" style="width: 100px; position: relative; top: -0px; height: 80px; color: #2C98F0; ">
+                <div class="col-md-6 col-md-offset-3 col-md-pull-3" data-aos="fade-right">
+                    <span class="heading-meta">Experience</span>
+                    <h2 class="color-heado">Work Experience</h2>
+                </div>
+            </div>
+            <div class="row" style="overflow: hidden;">
+                <div class="col-md-12">
+                    <div class="timeline-centered">
+                        <article class="timeline-entry" data-aos="fade-left">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-1">
+                                    <i class="fas fa-pencil-alt fa-1x timeline-ico"></i>
+                                </div>
+                                <div class="timeline-label" style="background-image: url(../media/hamburger.svg);">
+                                    <h2><a href="#">KFC</a> <span>2017-2018</span></h2>
+                                    <p> → Taking orders and processing it <br>
+                                        → Store handling <br>
+                                        → Maintaining a clean environment
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry" data-aos="fade-right">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-2">
+                                    <i class="fas fa-pencil-alt fa-1x timeline-ico"></i>
+                                </div>
+                                <div class="timeline-label" style="background-image: url(../media/sales.svg);">
+                                    <h2><a href="#">SALES REPRESENTATIVE at Vector Marketing</a> <span>2017-2018</span>
+                                    </h2>
+                                    <p> → Good Knowledge of Computer Software and Hardware’s, Electronics, video games,
+                                        cell phones (specifications), stereos <br> and other basic home tools and
+                                        accessories. <br>
+                                        → handled customers and their interest in products <br>
+                                        → Good skills in selling and buying products, efficienty completed targets set
+                                        by company</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry" data-aos="fade-left">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-3">
+                                    <i class="fas fa-pencil-alt fa-1x timeline-ico"></i>
+                                </div>
+                                <div class="timeline-label" style="background-image: url(../media/mechanic.svg);">
+                                    <h2><a href="#">SERVICE TECHNICIAN</a> <span>2017-2018</span></h2>
+                                    <p> → responsible for inspecting and repairing vehicles, machinery, and cars. <br>
+                                        → Maintaining inspections, monitor inventory, assembling mechanical components,
+                                        and perform repairs under supervison.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry" data-aos="fade-right">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-4">
+                                    <i class="fas fa-pencil-alt fa-1x timeline-ico"></i>
+                                </div>
+                                <div class="timeline-label" style="background-image: url(../media/restaurant.svg);">
+                                    <h2><a href="#">RESTAURAUNT (Manager)</a> <span>2017-2018</span></h2>
+                                    <p> → accountable for ensuring the successful operation <br>
+                                        → strong service skills and handling cash. <br>
+                                        → weekly sales reporting, invoicing and reducing associate theft and ensurign
+                                        guest safety.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry" data-aos="fade-up">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-5">
+                                    <i class="fas fa-pencil-alt fa-1x timeline-ico"></i>
+                                </div>
+                                <div class="timeline-label" style="background-image: url(../media/freelancing.svg);">
+                                    <h2><a href="#">FREELANCING (Web Development)</a> <span>2017-2018</span></h2>
+                                    <p> → accountable for ensuring the successful operation <br>
+                                        → strong service skills and handling cash. <br>
+                                        → weekly sales reporting, invoicing and reducing associate theft and ensurign
+                                        guest safety.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-entry begin" data-animate-effect="fadeInBottom">
+                            <div class="timeline-entry-inner">
+                                <div class="timeline-icon color-none">
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+
+
+
+
+
+    <section class="site-section services-section block__62849" id="services-section" style="width: 100%; margin-top: 100px;">
+        <div class="container" style="width: 100%;">
+            <div class="row mb-5">
+                <div class="col-12 text-center" data-aos="fade-up">
+                    <h3 class="section-title-sub text-primary">WHAT I DID</h3>
+                    <h2 class="section-title mb-3">PERSONAL PROJECTS</h2>
+                </div>
+            </div>
+            <div class="row" style="overflow: hidden;">
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fab fa-python fa-3x"></span></span>
+                        <h3>PYTHON</h3>
+                        <p>Implemented python for developing desktop GUI Applications , dynamic websites and webserver
+                            applications.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fab fa-react fa-3x"></span></span>
+                        <h3>REACT</h3>
+                        <p>A very powerful library, I preferably used to make frontend applications with backend server
+                            and database</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong2">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fas fa-rocket fa-3x"></span></span>
+                        <h3>DJANGO</h3>
+                        <p>I use django mostly to create secure and fast web apps due to its scalability, tons of users
+                            task.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong3">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fas fa-database fa-3x"></span></span>
+                        <h3>MYSQL</h3>
+                        <p>A relational database reliable to use for large application. I preffer when me have to create
+                            management system. </p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong4">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fab fa-java fa-3x"></span></span>
+                        <h3>JAVA</h3>
+                        <p>A powerful language to make Software apps, GUI's, Embedded System . Netbeans is great tool
+                            for java.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong5">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-5">
+                    <div class="block__16443 text-center d-block" data-aos="fade-up" data-aos-duration="2000">
+                        <span class="custom-icon mx-auto"><span class="fab fa-html5 fa-3x"></span></span>
+                        <h3>HTML/SCSS</h3>
+                        <p>Scss makes easy to design and define properties to overcome the cumbersome code.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModalLong6">
+                            PROJECTS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal 1111111111 -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">PYTHON PROJECTS</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <ul class="list-unstyled">
+                        <li class="skills-style">python automation bot </li>
+                        <p>An automated bot similar that functions like instagram to upload photos and add coments using
+                            instapi plugin with python and shows on runtime. </p>
+                        <li class="skills-style">GUI Application</li>
+                        <p>Learned various advanced algorithms by creating GUI using // matplolib // to underdstand
+                            basic concepts of machine learning and Artificial Intelligence.</p>
+                    </ul>
+
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">PYPI</span>
+                            <span class="label tag">Tkinter</span>
+                            <span class="label tag">MatPlotLib</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div>  -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/pypi.png" height="50" width="50" alt="pypi" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/matplotlib.png" height="45" width="45" alt="matplotlib" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/python.png" height="70" width="70" alt="Python" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2222222 -->
+    <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle23">REACT PROJECTS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled">
+                        <li class="skills-style">BLOG POST</li>
+                        <p>A small frontend app where you can write your daily blog and post it to the server.</p>
+                        <li class="skills-style">SCHOOL MANAGEMENT SYSTEM</li>
+                        <p>An app where you can create, delete , mark student grades and post various information
+                            related to college.</p>
+                    </ul>
+
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">React</span>
+                            <span class="label tag">Javascript</span>
+                            <span class="label tag">redux</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div> -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/react.png" height="50" width="50" alt="React" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/html5.png" height="45" width="45" alt="HTML5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/css3.svg" height="45" width="45" alt="CSS3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/javascript.png" height="45" width="45" alt="JavaScript" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/python.png" height="70" width="70" alt="Python" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/mysql.svg" height="70" width="70" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/django.svg" height="50" width="50"
+                                            style="position: relative; top: 15px; color: blue;" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3333333 -->
+    <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle25">DJANGO PROJECTS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled">
+                        <li class="skills-style">AUTOMATE CHATBOT</li>
+                        <p>Build an automated chatbot with PyPi library and JSON to fetch data that give feedback of
+                            user questions. </p>
+                        <li class="skills-style">E-COMMERCE API</li>
+                        <p>Developed REST API for an ecommerce website that can easily link with small buisnesses to
+                            expand buisness. <br>
+                            Languages Used :<br>
+                            → Rest, React, Redux, Javascript, Json <br>
+                        </p>
+                    </ul>
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">PYPI</span>
+                            <span class="label tag">Tkinter</span>
+                            <span class="label tag">MatPlotLib</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div> -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/react.png" height="50" width="50" alt="React" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/django.svg" height="50" width="50"
+                                            style="position: relative; top: 0px; color: blue;" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/html5.png" height="45" width="45" alt="HTML5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/css3.svg" height="45" width="45" alt="CSS3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/javascript.png" height="45" width="45" alt="JavaScript" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/python.png" height="70" width="70" alt="Python" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/mysql.svg" height="70" width="70" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 44444444 -->
+    <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle56">MYSQL PROJECTS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled">
+                        <li class="skills-style">HOSPITAL MANAGEMENT DATABASE</li>
+                        <p>A very efficient database system for assessing the quality of healthcare, often for a
+                            specific disease or within a specific healthcare delivery system and managing the staff
+                            records.</p>
+                        <li class="skills-style">BILLING SYSTEM</li>
+                        <p>To manage records, recuring payments and invoices for smooth recuring billing experience</p>
+                        <li class="skills-style">POOL PLAYER DATABASE</li>
+                        <p> → designed a website to store information of various players <br>
+                            → used HTML/SCSS, Javascript, PHP/MySQL
+                            → Worked on getting ranking System of players based on specific Rating System developed by
+                            myself.
+                        </p>
+                    </ul>
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">PYPI</span>
+                            <span class="label tag">Tkinter</span>
+                            <span class="label tag">MatPlotLib</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div> -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/mysql.svg" height="70" width="70"
+                                            style="position: relative; top: -5px;" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/html5.png" height="45" width="45" alt="HTML5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/css3.svg" height="35" width="35" alt="CSS3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/javascript.png" height="35" width="35" alt="JavaScript" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5555555555 -->
+    <div class="modal fade" id="exampleModalLong5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle22">JAVA PROJECTS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled">
+                        <li class="skills-style">AIRLINE RESERVATION GUI APPLICATION</li>
+                        <p>Created a gui apllication for purchasing air tickets domestically using javaFx, jFrame Forms.
+                        </p>
+                        <li class="skills-style">IMAGE COMPRESSION/DE-COMPRESSION</li>
+                        <p>An alternative image representation scheme, based on Gaussian derivatives, to teh standard
+                            discrete cosine transformation (DCT), within (JPEG) framework using NetBeans.</p>
+                    </ul>
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">PYPI</span>
+                            <span class="label tag">Tkinter</span>
+                            <span class="label tag">MatPlotLib</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div>     -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/java.png" height="60" width="60" alt="Java" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/netbeans.png" height="45" width="45" alt="netbeans" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6666666666 -->
+    <div class="modal fade" id="exampleModalLong6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle89">HTML/CSS PROJECTS</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <!-- <span aria-hidden="true">&times;</span> -->
+
+                        <div class="outer">
+                            <div class="inner">
+                                <label>Back</label>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-unstyled">
+                        <li class="skills-style">E-commerce dynamic website</li>
+                        <p>A more like amazon website to buy stuffs online. A fully automated website where a user can
+                            buy, add items to cart</p>
+                        <li class="skills-style"> Clients PROJECTS </li>
+                        <p>
+                            → Portfolios <br>
+                            → Buisness Websites <br>
+                            → College Projects</p>
+                    </ul>
+                    <!-- <div class="flex-item full ">
+                        <div class="text text-center">
+                          <p><strong>Technologies Used:</strong></p>
+                          <p class="">
+                            <span class="label tag">PYPI</span>
+                            <span class="label tag">Tkinter</span>
+                            <span class="label tag">MatPlotLib</span>
+                            <span class="label tag">InstaPI</span>
+                          </p>
+                        </div>
+                    </div> -->
+                    <div class="container" style="width: 100%;">
+                        <p class="skills-style" style="position: relative; left: -18px;">TECH USED</p>
+                        <div class="row">
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/java.png" height="60" width="60" alt="Java" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/react.png" height="50" width="50" alt="React" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/redux.png" height="50" width="50" alt="React-redux" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/html5.png" height="45" width="45" alt="HTML5" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/css3.svg" height="35" width="35" alt="CSS3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/javascript.png" height="35" width="35" alt="JavaScript" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/python.png" height="70" width="70" alt="Python" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <!-- client item -->
+                                <div class="client-item">
+                                    <div class="inner">
+                                        <img src="../media/mysql.svg" height="70" width="70" alt="MySQL" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" data-dismiss="modal">Close Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- *********************************************************************************************************** -->
+
+
+
+
+    <div class="site-section" id="what-we-do-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6 section-title" data-aos="fade-up">
+                    <span class="sub-title mb-2 d-block">What I Do</span>
+                    <h2 class="title text-primary">SERVICES</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 ml-auto">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-photo_album display-4 text-primary d-block mb-4"></span>
+                                <h3>WEB DEVELOPMENT</h3>
+                                <p>Build completely loaded web apps with frontend and backend syncs for the greater user
+                                    experience.</p>
+                                <img src="../media/undraw_progressive_app_m9ms.svg" alt=""
+                                    style="height: 200px; width: 300px;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-laptop_mac display-4 text-primary d-block mb-4"></span>
+                                <h3>WEB TEMPLATE DESIGNING</h3>
+                                <p>Sensitive website models with optimisation of the search engine with the right tools
+                                    such as squarespace </p>
+                                <img src="../media/undraw_static_website_0107.svg" alt=""
+                                    style="height: 200px; width: 300px;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-layers display-4 text-primary d-block mb-4"></span>
+                                <h3>COPYWRITING</h3>
+                                <p>Writing copies which are simple, descriptive and grammatically correct using various
+                                    writing styles that cater to different target markets.</p>
+                                <img src="../media/undraw_files1_9ool.svg" alt="" style="height: 200px; width: 300px;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-mobile display-4 text-primary d-block mb-4"></span>
+                                <h3>BACKEND APIs</h3>
+                                <p>Preferably done in django and react mode .</p>
+                                <img src="../media/undraw_server_cluster_jwwq.svg" alt=""
+                                    style="height: 200px; width: 300px;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-pencil display-4 text-primary d-block mb-4"></span>
+                                <h3>FANART (Digital Drawing)</h3><br>
+                                <p><img src="../media/fanart.PNG" alt="" style="height:280px; width: 300px;"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                            <div class="service h-100" data-aos="fade-up" data-aos-duration="3000ms">
+                                <span class="icon-search2 display-4 text-primary d-block mb-4"></span>
+                                <h3>SEO</h3>
+                                <p>Optimizing the website to my best to put it on the front of internet users.</p>
+                                <img src="../media/undraw_search_engines_nn9e.svg" alt=""
+                                    style="height: 200px; width: 300px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <footer class="site-a-section" id="contact-section">
+        <div class="row  footraw">
+            <div class="col-md-12">
+
+
+                <div class="footer-foot">
+                    <h4 id="footstyling">let's keep in touch</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100006722476178" target="_blank"><i
+                                    class="fab checkout1 fustyle fa-facebook fa-2x"></i></a></li>
+                        <li><a href="" target="_blank"><i class="fab fustyle checkout2 fa-twitter fa-2x"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/navjot-singh-635834186/" target="_blank"><i
+                                    class="fab checkout3 fustyle fa-linkedin-in fa-2x"></i></a></li>
+                        <li><a href="https://www.instagram.com/navjot_01/" target="_blank"><i
+                                    class="fab checkout4 fustyle fa-instagram fa-2x"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <!-- <div class="col-md-5 addfoot">
+                <div class="p-4 mb-3 bg-white addo">
+                    <p class="mb-0 font-weight-bold">Address</p>
+                    <p class="mb-4">3066 Bonaventure Drive, Malton, <br>Mississauga, CANADA</p>
+                    <p class="mb-0 font-weight-bold">Phone</p>
+                    <p class="mb-4"><a href="#">+1 437 345 3013</a></p>
+                    <p class="mb-0 font-weight-bold">Email Address</p>
+                    <p class="mb-0"><a href=""><span class="__cf_email__"
+                                data-cfemail="057c6a70776068646c6945616a68646c6b2b666a68">navjot8059@gmail.com</span></a>
+                    </p>
+                </div>
+            </div> -->
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="../js/animate.js"></script>
+
+    <!-- <script src="../js/carousel.js "></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+        integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"
+        integrity="sha256-GCAeRKCXFEtLTZ+gG1SCIrtGkYq1zZjMXkj+XUFNJqo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"
+        integrity="sha256-8y2mv4ETTGZLMlggdrgmCzthTVCNXGUdCQe1gd8qkyM=" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
