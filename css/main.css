@@ -1610,6 +1610,19 @@ body {
     position: relative;
     right: 35%;
   }
+  .block__62849 .block__16443 .custom-icon {
+    /* display: block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid #007bff; */
+    background: white;
+    /* margin-bottom: 1.5rem;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    transition: 0.3s all ease; */
+  }
 
 
   .modal-dialog { max-width: none; }
