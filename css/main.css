@@ -1606,6 +1606,12 @@ body {
 
 @media (max-width: 575px) {
 
+  .modal-btn {
+    position: relative;
+    right: 35%;
+  }
+
+
   .modal-dialog { max-width: none; }
   .modal-dialog {
     width: 100%;
