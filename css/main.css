@@ -35,32 +35,15 @@ body {
   .firsthead {
     display: none;
   }
-  
 }
-
-
 
 @media (max-width: 575px) {
   .img-overlap {
     height: 500px;
   }
 
-  .img-overlap .img-3{
-    display: flex;
-    position: absolute;
-    height: 500px;
-    width: 350px;
-    margin-top: 20px;
-    
-  }
 
-  
-
-  .img-overlap .img-1{
-    display: none;
-  }
-  
-  .img-overlap .img-2  {
+  .img-overlap .img-2 {
     display: none;
   }
 
@@ -109,7 +92,7 @@ body {
 
 .colfashionimgcontent {
   background-color: white;
-  background-image: url(../media/3.jpg);
+  background-image: url(../media/3.JPG);
   background-size: contain;
   top: 70px;
   background-position: center;
@@ -124,14 +107,12 @@ body {
     margin: 100px 100px;
     background-size: contain;
   }
-  
 }
 
 @media screen and (max-width: 768px) {
   .colfashionimgcontent {
     display: none;
   }
-  
 }
 
 
@@ -318,7 +299,6 @@ body {
   .block__62849 .block__16443:hover {
     top: 0;
   }
-  
 }
 
 .block__62849 .block__16443:hover .custom-icon {
@@ -431,7 +411,6 @@ body {
     left: 250px;
   }
 }
-
 
 
 .img-overlap .img-1,
@@ -968,7 +947,6 @@ body {
     max-width: 100%;
     height: auto;
   }
-  
 }
 
 @media (min-width: 1281px) {
@@ -979,9 +957,6 @@ body {
     top: 120px;
     left: 100px;
   }
-  
-
-
 
   .stratend {
     background-size: 780px;
@@ -1009,8 +984,6 @@ body {
   .home_banner_area .banner_inner .home_right_img {
     display: none;
   }
-  
-
 }
 
 .home_banner_area .banner_inner .col-lg-7 {
