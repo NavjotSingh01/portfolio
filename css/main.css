@@ -42,6 +42,10 @@ body {
     height: 500px;
   }
 
+  .img-overlap{
+    height: 400px;
+    
+  }
 
   .img-overlap .img-2 {
     display: none;
