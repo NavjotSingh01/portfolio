@@ -1744,7 +1744,7 @@ label {
 /* #E9EEF3 */
 .button-flip {
   padding: 10px 50px;
-  background: #8F826F;
+  background: transparent;
   color: white;
   border: 2.5px solid #583C21;
   font-size: 20px;
