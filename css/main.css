@@ -1301,7 +1301,7 @@ body {
 }
 .checkout1 {
   color: white;
-  background-color: #15a4fb;
+  background-color: #2D88FF;
   border-radius: 50%;
   padding: 8px;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -1334,13 +1334,20 @@ body {
 }
 .checkout3 {
   color: white;
-  background-color: #0092bb;
+  background-color: #0A66C2;
   border-radius: 50%;
   padding: 8px;
 }
 .checkout4 {
   color: white;
   background-color: #ed4956;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.checkout5 {
+  color: white;
+  background-color: black;
   border-radius: 50%;
   padding: 8px;
 }
@@ -1523,7 +1530,11 @@ body {
   font-size: 30px;
   letter-spacing: 6px;
   font-weight: bold;
-  color: rgb(5, 5, 121);
+  color: white;
+}
+
+.modal-backdrop {
+  opacity: 0.85 !important;
 }
 
 /* modal formatting */
@@ -1832,9 +1843,9 @@ label {
 }
 
 #flip-mini {
-  background: rgba(0, 0, 0, 0.658); /* fallback for old browsers */
+  background: #272727; /* fallback for old browsers */
 
-  color: white;
+  color: rgb(189, 189, 189);
 }
 
 @media (max-width: 700px) {
